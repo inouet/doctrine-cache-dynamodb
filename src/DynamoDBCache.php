@@ -251,7 +251,7 @@ class DynamoDBCache extends CacheProvider
      *
      * @param string $id
      *
-     * @return bool|\Guzzle\Service\Resource\Model
+     * @return null|\Guzzle\Service\Resource\Model
      */
     protected function getItem($id)
     {
@@ -266,7 +266,7 @@ class DynamoDBCache extends CacheProvider
             $result = $this->dynamodb->getItem($args);
             return $result;
         } catch (\Exception $e) {
-            return false;
+            return null;
         }
     }
 
